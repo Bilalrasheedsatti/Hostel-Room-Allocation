@@ -23,8 +23,10 @@ if (!isset($_SESSION['user_id'])) {
         .building {
             border: 1px solid #ccc;
             padding: 15px;
-            border-radius: 5px;
-            background: #f9f9f9;
+            border-radius: 8px;
+            background: linear-gradient(to right, #514A9D, #24C6DC); /* Modern blue/purple gradient */
+            color: #fff;
+            box-shadow: 0 2px 12px rgba(36,198,220,0.08);
         }
         .floor {
             margin-top: 10px;
@@ -61,12 +63,15 @@ if (!isset($_SESSION['user_id'])) {
             border-radius: 5px;
             display: none;
         }
+        .room, .floor, .building {
+            color: #222 !important;
+        }
     </style>
 </head>
 <body>
     <?php include 'includes/header.php'; ?>
     
-    <div class="container">
+    <div class="container" style="background: linear-gradient(to right, rgb(224, 234, 252), rgb(247, 250, 255));">
         <h2>Hostel Map</h2>
         <div id="hostel-map"></div>
         <div id="room-info"></div>

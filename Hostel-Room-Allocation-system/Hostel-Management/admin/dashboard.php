@@ -25,7 +25,7 @@ $pending_complaints = $stmt->fetchColumn();
 
 <?php include '../includes/admin_header.php'; ?>
 
-<div class="admin-dashboard">
+<div class="container">
     <h2>Admin Dashboard</h2>
 
     <div class="dashboard-stats">
@@ -49,16 +49,15 @@ $pending_complaints = $stmt->fetchColumn();
         </div>
     </div>
 
- <div class="quick-actions">
-    <h3>Quick Actions</h3>
-    <div class="action-buttons">
-        <a href="allocations.php" class="btn">Manage Allocations</a>
-        <a href="../map.php" class="btn">View Hostel Map</a>
-        <a href="applications.php" class="btn">Process Applications</a>
-        <a href="complaints.php" class="btn">Handle Complaints</a>
+    <div class="card">
+        <h3>Quick Actions</h3>
+        <div class="action-buttons">
+            <a href="allocations.php" class="btn">Manage Allocations</a>
+            <a href="../map.php" class="btn">View Hostel Map</a>
+            <a href="applications.php" class="btn">Process Applications</a>
+            <a href="complaints.php" class="btn">Handle Complaints</a>
+        </div>
     </div>
-</div>
-
 </div>
 
 <?php include '../includes/admin_footer.php'; ?>

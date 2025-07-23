@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <div class="container">
     <h2>📄 Pending Applications</h2>
 
-    <div class="card">
+    <div class="card" style="    max-width: max-content;">
         <table class="styled-table">
             <thead>
                 <tr>
