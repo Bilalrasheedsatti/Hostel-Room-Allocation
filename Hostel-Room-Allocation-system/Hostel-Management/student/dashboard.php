@@ -17,10 +17,14 @@ $stmt->execute([$student_id]);
 $application = $stmt->fetch();
 
 // Check if student has an allocated room
-$stmt = $pdo->prepare("SELECT a.*, r.room_number, r.building 
-                      FROM allocations a 
-                      JOIN rooms r ON a.room_id = r.room_id 
-                      WHERE a.student_id = ? AND a.status = 'active'");
+$stmt = $pdo->prepare("
+    SELECT a.*, r.room_number, f.floor_number, b.building_name
+    FROM allocations a
+    JOIN rooms r ON a.room_id = r.room_id
+    JOIN floors f ON r.floor_id = f.floor_id
+    JOIN buildings b ON f.building_id = b.building_id
+    WHERE a.student_id = ? AND a.status = 'active'
+");
 $stmt->execute([$student_id]);
 $allocation = $stmt->fetch();
 
@@ -54,7 +58,7 @@ $pending_complaints = $stmt->fetchColumn();
         <div class="card">
             <h3>Room Allocation</h3>
             <?php if ($allocation): ?>
-                <p>Room: <?php echo $allocation['building'] . ' - ' . $allocation['room_number']; ?></p>
+                <p>Room: <?php echo $allocation['building_name'] . ' - ' . $allocation['floor_number'] . ' - ' . $allocation['room_number']; ?></p>
                 <p>Allocated on: <?php echo date('d M Y', strtotime($allocation['allocate_date'])); ?></p>
                 <a href="room.php" class="btn">View Details</a>
             <?php else: ?>
