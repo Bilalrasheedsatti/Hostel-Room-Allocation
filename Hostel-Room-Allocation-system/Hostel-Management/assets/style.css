@@ -698,6 +698,72 @@ form button:hover {
     background: linear-gradient(135deg, #f7971e 0%, #ffd200 100%);
 }
 
+/* Complaints Section Styles */
+.complaints-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 32px 24px;
+    background: linear-gradient(to right, #e0eafc, #f7faff);
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(36,198,220,0.08);
+}
+
+.complaints-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 8px rgba(0,0,0,0.04);
+    margin-bottom: 24px;
+}
+
+.complaints-table th, .complaints-table td {
+    padding: 0.8rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.complaints-table th {
+    background: linear-gradient(to right, #514A9D, #24C6DC);
+    color: #fff;
+}
+
+.complaints-table tr:hover {
+    background: #f2f8fc;
+}
+
+.status-bar {
+    display: flex;
+    gap: 18px;
+    margin-bottom: 24px;
+    justify-content: center;
+}
+
+.status-bar-item {
+    flex: 1;
+    background: linear-gradient(to right, #43cea2, #185a9d);
+    color: #fff;
+    border-radius: 8px;
+    padding: 18px 0;
+    text-align: center;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(36,198,220,0.08);
+}
+
+.search-box {
+    margin-bottom: 18px;
+    text-align: right;
+}
+
+.search-box input {
+    padding: 8px 14px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 1em;
+    width: 240px;
+}
+
 @media (max-width: 900px) {
     .allocation-card {
         max-width: 98vw;
